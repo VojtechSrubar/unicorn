@@ -37,13 +37,13 @@ const StoriesGiphySection = ({ giphysArray }) => {
     ["no-landscape-row", 4],
   ];
 
-  /*const createTiles = (numTiles) => {
+  const createTiles = (numTiles) => {
     let tiles = [];
     for (let i = 0; i < numTiles; i++) {
       tiles.push(<GiphyTile giphy={getGiphy()} key={i} />);
     }
     return tiles;
-  };*/
+  };
 
   return (
     <div className="stories-section">
