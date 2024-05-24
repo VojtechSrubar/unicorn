@@ -3,6 +3,7 @@ import { fetchTrendingGiphys, fetchSearchedGiphys } from "../api/giphyApi";
 import "./Media.css";
 import TrendingGiphy from "./TrendingGiphy";
 import giphyArtists from "../artists";
+import ArtistGiphy from "./ArtistGiphy.js";
 
 const Media = () => {
   const [trending, setTrending] = useState([]);
@@ -34,8 +35,6 @@ const Media = () => {
   //return <TrendingGiphy key={index} giphy={trendingGiphy} />;
   //})}
 
-  console.log(artists);
-
   return (
     <div className="media">
       <div className="row">
@@ -51,7 +50,9 @@ const Media = () => {
           <h1>Artists</h1>
         </div>
         <div className="artists-container">
-          <p>Content</p>
+          {artists.map((ArtistGiphys, index) => {
+            return <ArtistGiphy giphy={ArtistGiphys} key={index} />;
+          })}
         </div>
       </div>
       <div className="row">
