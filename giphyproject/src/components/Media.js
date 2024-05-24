@@ -8,6 +8,7 @@ import ArtistGiphy from "./ArtistGiphy.js";
 const Media = () => {
   const [trending, setTrending] = useState([]);
   const [artists, setArtists] = useState([]);
+  const [clips, setClips] = useState([]);
 
   const randomizeData = (content) => {
     return content.data.sort(() => Math.random() - 0.5);
@@ -27,9 +28,15 @@ const Media = () => {
     setArtists(artists.flat());
   };
 
+  const getSearchedGiphys = async (query, setState) => {
+    const searched = await fetchSearchedGiphys(query);
+    setState(searched.data);
+  };
+
   useEffect(() => {
     getTrendingGiphys();
     getArtists();
+    getSearchedGiphys("coffee", setClips);
   }, []);
   //{trending?.map((trendingGiphy, index) => {
   //return <TrendingGiphy key={index} giphy={trendingGiphy} />;
