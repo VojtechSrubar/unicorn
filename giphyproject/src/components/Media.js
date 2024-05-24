@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from "react";
-import { fetchTrendingGiphys } from "../api/giphyApi";
+import { fetchTrendingGiphys, fetchSearchedGiphys } from "../api/giphyApi";
 import "./Media.css";
 import TrendingGiphy from "./TrendingGiphy";
+import giphyArtists from "../artists";
 
 const Media = () => {
   const [trending, setTrending] = useState([]);
+  const [artists, setArtists] = useState([]);
 
   const randomizeData = (content) => {
     return content.data.sort(() => Math.random() - 0.5);
@@ -15,9 +17,24 @@ const Media = () => {
     setTrending(trending.data);
   };
 
+  const getArtists = async () => {
+    const artists = await Promise.all(
+      giphyArtists.map((giphyArtist) => {
+        return fetchSearchedGiphys(giphyArtist).then((res) => res.data.data);
+      })
+    );
+    setArtists(artists.flat());
+  };
+
   useEffect(() => {
     getTrendingGiphys();
+    getArtists();
   }, []);
+  //{trending?.map((trendingGiphy, index) => {
+  //return <TrendingGiphy key={index} giphy={trendingGiphy} />;
+  //})}
+
+  console.log(artists);
 
   return (
     <div className="media">
@@ -26,11 +43,7 @@ const Media = () => {
           <img src="/images/trending.svg" alt="trending" />
           <h1>Trending</h1>
         </div>
-        <div className="trending-container">
-          {trending?.map((trendingGiphy, index) => {
-            return <TrendingGiphy key={index} giphy={trendingGiphy} />;
-          })}
-        </div>
+        <div className="trending-container"></div>
       </div>
       <div className="row">
         <div className="row-header">

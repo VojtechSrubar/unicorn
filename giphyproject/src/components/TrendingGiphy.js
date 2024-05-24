@@ -3,7 +3,7 @@ import "./TrendingGiphy.css";
 
 const TrendingGiphy = ({ giphy }) => {
   return (
-    <div>
+    <div className="trending-giphy" key={giphy.id}>
       <img src={giphy.images.downsized.url} alt={giphy.title} />
     </div>
   );
