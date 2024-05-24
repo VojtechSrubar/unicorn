@@ -10,26 +10,26 @@ export default function Header() {
       <div className="menu">
         <div className="button-wrapper reactions">
           <div className="menu-button hover-reactions">
-            <h2>Reakce</h2>
+            <h2>Reactions</h2>
           </div>
           <div className="button-wrapper entertainment">
             <div className="menu-button hover-entertainment">
-              <h2>Zábava</h2>
+              <h2>Entertainment</h2>
             </div>
           </div>
           <div className="button-wrapper sports">
             <div className="menu-button hover-sports">
-              <h2>Sporty</h2>
+              <h2>Sports</h2>
             </div>
           </div>
           <div className="button-wrapper stickers">
             <div className="menu-button hover-stickers">
-              <h2>Stickery</h2>
+              <h2>Stickers</h2>
             </div>
           </div>
           <div className="button-wrapper artists">
             <div className="menu-button hover-artists">
-              <h2>Umělci</h2>
+              <h2>Artists</h2>
             </div>
           </div>
           <div className="button-wrapper moreverticon">
