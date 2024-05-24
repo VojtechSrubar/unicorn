@@ -6,6 +6,7 @@ import TrendingGiphy from "./TrendingGiphy";
 import giphyArtists from "../artists";
 import ArtistGiphy from "./ArtistGiphy.js";
 import ClipsGiphySection from "./ClipsGiphySection.js";
+import StoriesGiphySection from "./StoriesGiphySection.js";
 
 const Media = () => {
   const [trending, setTrending] = useState([]);
@@ -46,6 +47,8 @@ const Media = () => {
   //return <TrendingGiphy key={index} giphy={trendingGiphy} />;
   //})}
 
+  console.log(stories, "storied");
+
   return (
     <div className="media">
       <div className="row">
@@ -81,7 +84,7 @@ const Media = () => {
           <h1>Stories</h1>
         </div>
         <div className="stories-container">
-          <p>Content</p>
+          <StoriesGiphySection giphysArray={stories} />
         </div>
       </div>
     </div>

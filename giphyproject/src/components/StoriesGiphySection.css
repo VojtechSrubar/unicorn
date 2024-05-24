@@ -1,0 +1,27 @@
+.landscape-left-row{
+    display: grid;
+    grid-template-columns: 550px 256px 265px;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.landscape-right-row{
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.no-landscape-row{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.landscape-middle-row{
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    gap: 10px;
+    margin-bottom: 10px;
+}
