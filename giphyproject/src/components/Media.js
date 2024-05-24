@@ -4,11 +4,37 @@ import "./Media.css";
 import TrendingGiphy from "./TrendingGiphy";
 import giphyArtists from "../artists";
 import ArtistGiphy from "./ArtistGiphy.js";
+import ClipsGiphySection from "./ClipsGiphySection.js";
 
 const Media = () => {
   const [trending, setTrending] = useState([]);
   const [artists, setArtists] = useState([]);
   const [clips, setClips] = useState([]);
+
+  const fetchWithRetry = async (
+    fetchFunction,
+    retries = 3,
+    delayTime = 1000
+  ) => {
+    const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+
+    for (let i = 0; i < retries; i++) {
+      try {
+        return await fetchFunction();
+      } catch (error) {
+        if (
+          error.response &&
+          error.response.status === 429 &&
+          i < retries - 1
+        ) {
+          await delay(delayTime);
+          delayTime *= 2; // Exponential backoff
+        } else {
+          throw error;
+        }
+      }
+    }
+  };
 
   const randomizeData = (content) => {
     return content.data.sort(() => Math.random() - 0.5);
@@ -65,7 +91,7 @@ const Media = () => {
       <div className="row">
         <div className="row-header">
           <img src="/images/clips.svg" alt="trending" />
-          <h1>Clips</h1>
+          <ClipsGiphySection giphysArray={clips} />
         </div>
         <div className="clips-container">
           <p>Content</p>

@@ -1,0 +1,15 @@
+.clips.grid{
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    gap: 10px;
+}
+
+.first-column{
+    height: 400px;
+    width: 750px;
+}
+
+.second-column{
+    width: 350px;
+    height: 450px;
+}
