@@ -25,3 +25,27 @@
     gap: 10px;
     margin-bottom: 10px;
 }
+
+.giphy-title{
+    height: 280px;
+    overflow: hidden;
+    position: relative;
+}
+
+.giphy-title img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 4px 4px 0px 0px;
+}
+
+.text-title{
+    position: absolute;
+    bottom: 5px;
+    left: 10px;
+}
+
+.line-top-purple{
+    background-attachment: #9933ff;
+    height: 6px;
+}

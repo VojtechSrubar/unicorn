@@ -12,39 +12,49 @@ const StoriesGiphySection = ({ giphysArray }) => {
   };
 
   const GiphyTitle = (giphy) => {
-    <div className="title">
-      <div className="giphy-title"></div>
+    let giphyURL = giphy ? giphy.image.downsized.url : "";
+
+    <div className="tile">
+      <div className="giphy-title">
+        <div className="text-title">
+          <p>{giphy?.title}</p>
+        </div>
+        <img src={giphyURL} />
+      </div>
+      <div className="line-box">
+        <div className="line-top-purple"></div>¨
+        <div className="line-middle-purple"></div>
+        <div className="line-bottom-purple"></div>
+      </div>
     </div>;
   };
+
+  const gridGiphyConfig = [
+    ["landscape-left-row", 3],
+    ["landscape-right-row", 3],
+    ["no-landscape-row", 4],
+    ["landscape-middle-row", 3],
+    ["no-landscape-row", 4],
+  ];
+
+  const createTiles = (numTiles) => {
+    let tiles = [];
+    for (let i = 0; i < numTiles; i++) {
+      tiles.push(<GiphyTile giphy={getGiphy()} key={i} />);
+    }
+    return tiles;
+  };
+
   return (
     <div className="stories-section">
-      <div className="landscape-left-row">
-        <GiphyTitle giphy={getGiphy()} />
-        <GiphyTitle giphy={getGiphy()} />
-        <GiphyTitle giphy={getGiphy()} />
-      </div>
-      <div className="landscape-right-row">
-        <GiphyTitle giphy={getGiphy()} />
-        <GiphyTitle giphy={getGiphy()} />
-        <GiphyTitle giphy={getGiphy()} />
-      </div>
-      <div className="no-landscape-row">
-        <GiphyTitle giphy={getGiphy()} />
-        <GiphyTitle giphy={getGiphy()} />
-        <GiphyTitle giphy={getGiphy()} />
-        <GiphyTitle giphy={getGiphy()} />
-      </div>
-      <div className="landscape-middle-row">
-        <GiphyTitle giphy={getGiphy()} />
-        <GiphyTitle giphy={getGiphy()} />
-        <GiphyTitle giphy={getGiphy()} />
-      </div>
-      <div className="no-landscape-row">
-        <GiphyTitle giphy={getGiphy()} />
-        <GiphyTitle giphy={getGiphy()} />
-        <GiphyTitle giphy={getGiphy()} />
-        <GiphyTitle giphy={getGiphy()} />
-      </div>
+      {gridGiphyConfig.map(([layoutClass, numTiles], index) => {
+        const tiles = createTiles(numTiles);
+        return (
+          <div className={layoutClass} key={index}>
+            {tiles}
+          </div>
+        );
+      })}
     </div>
   );
 };
