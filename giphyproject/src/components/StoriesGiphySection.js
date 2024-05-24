@@ -11,7 +11,7 @@ const StoriesGiphySection = ({ giphysArray }) => {
     }
   };
 
-  const GiphyTitle = (giphy) => {
+  const GiphyTile = (giphy) => {
     let giphyURL = giphy ? giphy.image.downsized.url : "";
 
     <div className="tile">

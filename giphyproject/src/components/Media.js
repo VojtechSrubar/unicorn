@@ -20,7 +20,7 @@ const Media = () => {
 
   const getTrendingGiphys = async () => {
     const trending = await fetchTrendingGiphys();
-    setTrending(trending.data);
+    setTrending(randomizeData(trending.data));
   };
 
   const getArtists = async () => {
@@ -43,10 +43,8 @@ const Media = () => {
     getSearchedGiphys("coffee", setClips);
     //getSearchedGiphys("pose", setStories);
   }, []);
-  //{trending?.map((trendingGiphy, index) => {
-  //return <TrendingGiphy key={index} giphy={trendingGiphy} />;
-  //})}
 
+  console.log(trending);
   return (
     <div className="media">
       <div className="row">
@@ -54,7 +52,11 @@ const Media = () => {
           <img src="/images/trending.svg" alt="trending" />
           <h1>Trending</h1>
         </div>
-        <div className="trending-container"></div>
+        <div className="trending-container">
+          {trending?.map((trenfingGiphy) => {
+            return <h2>{trenfingGiphy.title}</h2>;
+          })}
+        </div>
       </div>
       <div className="row">
         <div className="row-header">
