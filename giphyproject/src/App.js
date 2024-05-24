@@ -1,12 +1,13 @@
 import "./App.css";
 import Header from "./components/Header";
+import SearchContainer from "./components/SearchContainer";
 
 function App() {
   return (
     <div className="app">
       <div className="main">
         <Header />
-        <h1>Search Contaier</h1>
+        <SearchContainer />
         <h1>Média</h1>
       </div>
     </div>
