@@ -4,7 +4,7 @@ import axios from "axios";
 const axiosParams = {
   // Set different base URL based on the environment
   baseURL:
-    process.env.NODE_ENV === "development" ? "http://localhost:3001" : "/",
+    process.env.NODE_ENV === "development" ? "http://localhost:3000" : "/",
   // Alternative if you have more environments
   // baseURL: process.env.VUE_APP_API_BASE_URL
 };

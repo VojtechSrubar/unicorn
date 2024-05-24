@@ -6,13 +6,13 @@ import TrendingGiphy from "./TrendingGiphy";
 import giphyArtists from "../artists";
 import ArtistGiphy from "./ArtistGiphy.js";
 import ClipsGiphySection from "./ClipsGiphySection.js";
-import StoriesGiphySection from "./StoriesGiphySection.js";
+//import StoriesGiphySection from "./StoriesGiphySection.js";
 
 const Media = () => {
   const [trending, setTrending] = useState([]);
   const [artists, setArtists] = useState([]);
   const [clips, setClips] = useState([]);
-  const [stories, setStories] = useState([]);
+  //const [stories, setStories] = useState([]);
 
   const randomizeData = (content) => {
     return content.data.sort(() => Math.random() - 0.5);
@@ -41,13 +41,11 @@ const Media = () => {
     getTrendingGiphys();
     getArtists();
     getSearchedGiphys("coffee", setClips);
-    getSearchedGiphys("pose", setStories);
+    //getSearchedGiphys("pose", setStories);
   }, []);
   //{trending?.map((trendingGiphy, index) => {
   //return <TrendingGiphy key={index} giphy={trendingGiphy} />;
   //})}
-
-  console.log(stories, "storied");
 
   return (
     <div className="media">
@@ -83,9 +81,7 @@ const Media = () => {
           <img src="/images/stories.svg" alt="trending" />
           <h1>Stories</h1>
         </div>
-        <div className="stories-container">
-          <StoriesGiphySection giphysArray={stories} />
-        </div>
+        <div className="stories-container"></div>
       </div>
     </div>
   );
