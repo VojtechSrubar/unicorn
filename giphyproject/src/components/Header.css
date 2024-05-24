@@ -8,7 +8,6 @@
 }
 
 .menu{
-    background-color: aqua;
     display: flex;
     flex: 1;
     justify-content: space-between;
@@ -37,3 +36,35 @@
 .profile img{
     width: 35px;
 }
+
+.button-wrapper{
+    background-color: red;
+    height: 35px;
+    display: flex;
+    align-items: flex-start;
+    margin-right: 10px;
+}
+
+.reakce {
+    background: linear-gradient(90deg, #43e0ff 0%, #456ffc 75%);
+  }
+  
+  .zabava {
+    background: linear-gradient(90deg, #456ffc 0%, #7145fc 69%);
+  }
+  
+  .sporty {
+    background: linear-gradient(90deg, #7145fc 0%, #a945fc 71%, #c445fc 92%);
+  }
+  
+  .stickery {
+    background: linear-gradient(90deg, #c445fc 0%, #ef45fc 75%);
+  }
+  
+  .umelci {
+    background: linear-gradient(90deg, #ef45fc 0%, #fc45c5 62%);
+  }
+  
+  .moreverticon {
+    background: linear-gradient(90deg, #fc45c5 0%, #fc4584 76%);
+  }
