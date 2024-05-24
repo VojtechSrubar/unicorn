@@ -9,7 +9,18 @@
     width: 750px;
 }
 
+.first-column img{
+    height: 100%;
+    width: 100%;
+    border-radius:4px ;
+}
+
 .second-column{
     width: 350px;
     height: 450px;
+}
+
+.second-column img{
+    width: 350px;
+    height: 173px;
 }
