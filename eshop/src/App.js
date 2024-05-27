@@ -1,13 +1,12 @@
-import "./App.css";
-import Button from "./componets/Button";
+import React from "react";
+import { BrowserRouter as Router } from "react-router-dom";
 import Header from "./componets/Header";
 
 function App() {
   return (
-    <>
+    <Router>
       <Header />
-      <Button>Button</Button>
-    </>
+    </Router>
   );
 }
 
