@@ -4,11 +4,11 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 
-import HomePage from "./pages/HomePage";
-import Contact from "./pages/Contact";
-import ProductsPage from "./pages/ProductsPage";
-import ProductPage from "./pages/ProductPage";
-import NotFoundPage from "./pages/NotFoundPage";
+import HomePage from './pages/HomePage';
+import Contact from './pages/ContactPage';
+import ProductsPage from './pages/ProductsPage';
+import ProductPage from './pages/ProductPage';
+import NotFoundPage from './pages/NotFoundPage';
 
 import "./index.css";
 
@@ -29,7 +29,7 @@ const router = createBrowserRouter([
     errorElement: <NotFoundPage />,
     children: [
       {
-        path: "/products/:productId",
+        path: '/products/:productId',
         element: <ProductPage />,
       },
     ],
