@@ -1,9 +1,14 @@
-import React from 'react'
+import React from "react";
+import Header from "../componets/Header";
+import ProductList from "../componets/ProductList";
 
 function ProductsPage() {
   return (
-    <div>ProductsPage</div>
-  )
+    <>
+      <Header />
+      <ProductList/>
+    </>
+  );
 }
 
-export default ProductsPage
+export default ProductsPage;

@@ -1,12 +1,14 @@
-import React from "react";
-import { BrowserRouter as Router } from "react-router-dom";
+import "./App.css";
+import Button from "./componets/Button";
 import Header from "./componets/Header";
+/* import { fetchProducts } from "../utils/Functions"; */
 
 function App() {
   return (
-    <Router>
+    <>
       <Header />
-    </Router>
+      <Button>Button</Button>
+    </>
   );
 }
 
