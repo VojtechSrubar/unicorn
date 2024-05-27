@@ -53,8 +53,8 @@ const Media = () => {
           <h1>Trending</h1>
         </div>
         <div className="trending-container">
-          {trending?.map((trendingGiphy, index) => {
-            return <TrendingGiphy giphy={trendingGiphy} key={index} />;
+          {trending?.map((trenfingGiphy) => {
+            return <h2>{trenfingGiphy.title}</h2>;
           })}
         </div>
       </div>
