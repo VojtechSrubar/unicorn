@@ -8,21 +8,29 @@
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     text-align: center;
+    background-color: #f5f5f5; /* Light gray background */
+  text-align: left;  /* Left-align content */
   }
   
   .product-image {
     width: 100%;
-    max-width: 300px;
-    height: auto;
+    height: 350px;
+    /*max-width: 150px;*/
+    /*height: auto;*/
     margin-bottom: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
   }
-  
   .product-info {
     text-align: center;
+    color: #333; /* Darker gray text color */
   }
   
   .product-title {
     margin-bottom: 5px;
+    font-size: 18px; /* Increase title font size */
+  margin-bottom: 10px; /* Add more space after title */
   }
   
   .product-description {

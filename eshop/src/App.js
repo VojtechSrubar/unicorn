@@ -1,7 +1,5 @@
 import "./App.css";
-
 import React, { useEffect, useState } from "react";
-
 import Product from "./componets/Product";
 import Button from "./componets/Button";
 import Header from "./componets/Header";
