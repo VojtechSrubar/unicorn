@@ -1,6 +1,11 @@
 import React from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { fetchProducts } from "../utils/functions";
+
+import Header from "../componets/Header";
+import Product from "../componets/Product";
+
+import { fetchProducts } from './Functions';
 
 function ProductsPage() {
   const [products, setProducts] = useState([]);
