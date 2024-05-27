@@ -1,24 +1,13 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React from "react";
+import { Link } from "react-router-dom";
+import { fetchProducts } from "../utils/functions";
 
-function ProductsPage() {/*
-  fetch('https://fakestoreapi.com/products')
-          .then(res=>res.json())
-          .then(json=>console.log(json)) */
+function ProductsPage() {
+  
+  const products = fetchProducts();
+  console.log(products);
 
-  /* const getProducts = async () => {
-    const products = await Promise.all(
-      [
-        fetch('https://fakestoreapi.com/products').then(res=>res.json()),
-        fetch('https://fakestoreapi.com/products').then(res=>res.json())
-      ]
-    )
-    console.log(products)
-  } */
-
-  return (
-    <div>ProductsPage</div>
-  )
+  return <div>ProductsPage</div>;
 }
 
-export default ProductsPage
+export default ProductsPage;

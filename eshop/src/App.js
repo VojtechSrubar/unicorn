@@ -1,25 +1,17 @@
 import './App.css';
-import React, { useEffect, useState } from 'react';
-import Product from './componets/Product';
 
-const fetchData = async () => {
-  try {
-    const response = await fetch('https://fakestoreapi.com/products/');
-    const json = await response.json();
-    return json;
-  } catch (error) {
-    console.error(error);
-  }
-};
-import "./App.css";
+import React, { useEffect, useState } from 'react';
+
+import Product from './componets/Product';
 import Button from "./componets/Button";
 import Header from "./componets/Header";
+import { fetchProducts } from './utils/functions';
 
 function App() {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    fetchData().then(json => setData(json));
+    fetchProducts().then(json => setData(json));
   }, []);
 
   return (
