@@ -1,11 +1,11 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 
 import Header from "../componets/Header";
 import Product from "../componets/Product";
 
-import { fetchProducts } from './Functions';
+import { fetchProducts } from "./Functions";
 
 function ProductsPage() {
   const [products, setProducts] = useState([]);
@@ -17,12 +17,15 @@ function ProductsPage() {
   return (
     <>
       <Header />
+      <Outlet />
       <div className="container">
         <div className="row row-cols-1 row-cols-md-3 g-4">
           {products.map((product) => (
-            <div className="col" key={product.id}>
-              <Product {...product} />
-            </div>
+            <Link key={product.id} to={`/products/${product.id}`}>
+              <div className="col">
+                <Product {...product} />
+              </div>
+            </Link>
           ))}
         </div>
       </div>
