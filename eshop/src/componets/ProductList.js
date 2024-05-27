@@ -2,8 +2,7 @@ import React from "react";
 import { useState, useEffect } from "react";
 import { Link, Outlet } from "react-router-dom";
 import Product from "../componets/Product";
-import { fetchProducts } from "../pages/Functions";
-
+import { fetchProducts } from "../Functions";
 
 const ProductList = () => {
     const [products, setProducts] = useState([]);

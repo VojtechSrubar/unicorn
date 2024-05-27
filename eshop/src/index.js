@@ -5,7 +5,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 
 import HomePage from './pages/HomePage';
-import Contact from './pages/Contact';
+import Contact from './pages/ContactPage';
 import ProductsPage from './pages/ProductsPage';
 import ProductPage from './pages/ProductPage';
 import NotFoundPage from './pages/NotFoundPage';
@@ -27,13 +27,12 @@ const router = createBrowserRouter([
     path: '/products',
     element: <ProductsPage />,
     errorElement: <NotFoundPage />,
-    children: [
-      {
-        path: '/products/:productId',
-        element: <ProductPage />,
-      },
-    ],
   },
+  {
+    path: '/products/:productId',
+    element: <ProductPage />,
+    errorElement: <NotFoundPage />,
+  }
 ]);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
