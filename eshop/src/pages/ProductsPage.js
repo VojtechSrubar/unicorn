@@ -22,7 +22,7 @@ function ProductsPage() {
         </div>
       </div>
     </>
-  )
+  );
 }
 
 export default ProductsPage;
