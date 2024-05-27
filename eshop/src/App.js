@@ -6,8 +6,7 @@ import Header from "./componets/Header";
 function App() {
   return (
     <>
-      <Header />
-      <Button>Button</Button>
+
     </>
   );
 }
