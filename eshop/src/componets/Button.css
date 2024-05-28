@@ -1,3 +1,15 @@
 :root {
     --logo-color: #002883;
   }
+
+  .add-to-cart {
+    height: 45px;
+    width: 100%;
+    padding: 10px;
+    border: none;
+    outline: none;
+    background: var(--logo-color);
+    color: white;
+    margin-top: 20%;
+    border-radius: 30px;
+  }
