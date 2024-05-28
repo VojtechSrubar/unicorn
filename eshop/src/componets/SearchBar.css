@@ -1,7 +1,11 @@
+:root {
+  --logo-color: #002883;
+}
+
 .search-bar {
   display: flex;
   align-items: center;
-  background-color: #444; 
+  background-color: var(--logo-color); 
   padding: 8px;
   margin-left: 20px;
 }

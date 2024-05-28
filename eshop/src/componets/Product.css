@@ -1,3 +1,18 @@
+:root {
+  --logo-color: #002883;
+}
+  
+.add-to-cart {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  outline: none;
+  background: var(--logo-color);
+  color: white;
+  margin-top: 20%;
+  border-radius: 30px;
+}
+
 .product-card {
     display: flex;
     flex-direction: column;
@@ -20,7 +35,7 @@
   
   .product-image {
     max-width: 85%;
-    max-height: 380px;
+    max-height: 350px;
     margin-bottom: 10px;
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -29,13 +44,14 @@
 
   .product-info {
     text-align: center;
-    color: #333; /* Darker gray text color */
+    color: #333; 
   }
   
   .product-title {
-    margin-bottom: 5px;
-    font-size: 18px; /* Increase title font size */
-  margin-bottom: 10px; /* Add more space after title */
+    font-weight: bold;
+    margin-bottom: 10px;
+    font-size: 18px; 
+    color: black; 
   }
   
   .product-description {
@@ -45,7 +61,7 @@
   .product-price {
     margin-bottom: 10px;
     font-size: 28px;
-    font-weight: bold; /* Make price text bold */
-    margin-bottom: 0; /* Remove bottom margin for tighter spacing */
-    color: #e97436; /* Example: Use an orange color for the price */
+    font-weight: bold; 
+    margin-bottom: 0; 
+    color: var(--logo-color); 
   }
