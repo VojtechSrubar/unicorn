@@ -19,13 +19,13 @@ export default function Header() {
           </Link>
         </div>
         <div className="nav-item">
-          <Link to="/contact">
-            <h5>Contact</h5>
+          <Link to="/products">
+            <h5>Products</h5>
           </Link>
         </div>
         <div className="nav-item">
-          <Link to="/products">
-            <h5>Products</h5>
+          <Link to="/contact">
+            <h5>Contact</h5>
           </Link>
         </div>
         <h5>

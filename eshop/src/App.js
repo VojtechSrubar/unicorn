@@ -1,7 +1,7 @@
 import "./App.css";
 import { Outlet } from "react-router-dom";
 import Header from "./componets/Header";
-/* import { fetchProducts } from "../utils/Functions"; */
+import "./pages/HomePage.js";
 
 function App() {
   return (
