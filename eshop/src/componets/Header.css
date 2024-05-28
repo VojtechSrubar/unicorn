@@ -2,11 +2,15 @@
   --logo-color: #002883;
 }
 
+.nav-item a h5 {
+  color: white;
+}
+
 .header {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #444;
+    background-color: var(--logo-color);
     color: #fff;
     padding: 0px 20px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);

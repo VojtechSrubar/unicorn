@@ -38,7 +38,7 @@ function ProductPage() {
             <span>+</span>
           </div>
 
-          <button>Add to Cart</button>
+          <button className="add-to-cart">Add to Cart</button>
         </div>
       </div>
     </section>

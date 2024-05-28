@@ -101,12 +101,12 @@
     line-height: 0;
   }
   
-  button {
+  .add-to-cart {
     width: 100%;
     padding: 10px;
     border: none;
     outline: none;
-    background: #444;
+    background: var(--logo-color);
     color: white;
     margin-top: 20%;
     border-radius: 30px;
