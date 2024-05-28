@@ -7,6 +7,7 @@ function ProductsPage() {
   return (
     <>
       <CartProvider>
+        <Header />
         <ProductList />
       </CartProvider>
   

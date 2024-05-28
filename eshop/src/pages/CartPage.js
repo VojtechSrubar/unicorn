@@ -4,6 +4,7 @@ import { CartContext } from '../context/CartContext'; // Assuming CartContext is
 const CartPage = () => {
   const { items } = useContext(CartContext);
 
+  console.log (items);
   return (
     <div>
       {items.length > 0 ? (

@@ -1,16 +1,12 @@
 import "./App.css";
 import { Outlet } from "react-router-dom";
 import Header from "./componets/Header";
-/* import { fetchProducts } from "../utils/Functions"; */
+import { CartProvider } from "./context/CartContext";
+
 
 function App() {
   return (
-    <div className="App">
-      <Header />
-      <main>
-        <Outlet />
-      </main>
-    </div>
+    <CartProvider></CartProvider>
   );
 }
 
