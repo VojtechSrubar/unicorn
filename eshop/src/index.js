@@ -5,7 +5,7 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 
 import HomePage from "./pages/HomePage";
-import Contact from "./pages/Contact";
+import ContactPage from "./pages/ContactPage";
 import ProductsPage from "./pages/ProductsPage";
 import ProductPage from "./pages/ProductPage";
 import NotFoundPage from "./pages/NotFoundPage";
@@ -15,21 +15,23 @@ import "./index.css";
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <HomePage />,
-    errorElement: <NotFoundPage />,
-  },
-  {
-    path: "/contact",
-    element: <Contact />,
-    errorElement: <NotFoundPage />,
-  },
-  {
-    path: "/products",
-    element: <ProductsPage />,
+    element: <App />,
     errorElement: <NotFoundPage />,
     children: [
       {
-        path: "/products/:productId",
+        path: "/",
+        element: <HomePage />,
+      },
+      {
+        path: "contact",
+        element: <ContactPage />,
+      },
+      {
+        path: "products",
+        element: <ProductsPage />,
+      },
+      {
+        path: "products/:productId",
         element: <ProductPage />,
       },
     ],
@@ -39,9 +41,7 @@ const router = createBrowserRouter([
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <App />
     <RouterProvider router={router} />
-    <App />
   </React.StrictMode>
 );
 

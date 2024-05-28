@@ -1,13 +1,16 @@
 import "./App.css";
-import Button from "./componets/Button";
+import { Outlet } from "react-router-dom";
 import Header from "./componets/Header";
 /* import { fetchProducts } from "../utils/Functions"; */
 
 function App() {
   return (
-    <>
-
-    </>
+    <div className="App">
+      <Header />
+      <main>
+        <Outlet />
+      </main>
+    </div>
   );
 }
 
