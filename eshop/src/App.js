@@ -1,12 +1,15 @@
 import "./App.css";
 import { Outlet } from "react-router-dom";
 import Header from "./componets/Header";
-import { CartProvider } from "./context/CartContext";
-
+/* import { fetchProducts } from "../utils/Functions"; */
 
 function App() {
   return (
-    <CartProvider></CartProvider>
+    <div className="App">
+      <main>
+        <Outlet />
+      </main>
+    </div>
   );
 }
 

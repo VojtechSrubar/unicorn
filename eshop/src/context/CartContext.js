@@ -1,4 +1,4 @@
-import React, { createContext, useState } from 'react';
+import React, { createContext, useState, useEffect } from 'react';
 
 const CartContext = createContext({
   items: [], // Pole pro uložení položek v košíku
@@ -6,7 +6,7 @@ const CartContext = createContext({
   totalPrice: 0, // Celková cena položek v košíku
   addItem: (item, quantity) => {}, // Funkce pro přidání položky do košíku
   removeItem: (itemId) => {}, // Funkce pro odebrání položky z košíku
-  updateItemQuantity: (itemId, quantity) => {}, // Funkce pro aktualizaci počtu kusů položky
+  updateItemQuantity: (itemId, newQuantity) => {}, // Updated function signature
   clearCart: () => {}, // Funkce pro vyprázdnění košíku
 });
 
@@ -38,9 +38,15 @@ const CartProvider = ({ children }) => {
     calculateTotalQuantityAndPrice(); // Recalculate total after removing
   };
 
-  const updateItemQuantity = (itemId, quantity) => {
+  const updateItemQuantity = (itemId, newQuantity) => {
+    // Validate new quantity (optional)
+    if (newQuantity < 1) {
+      console.error("Quantity cannot be less than 1");
+      return;
+    }
+
     const updatedItems = items.map((item) =>
-      item.id === itemId ? { ...item, quantity } : item
+      item.id === itemId ? { ...item, quantity: newQuantity } : item
     );
     setItems(updatedItems);
     calculateTotalQuantityAndPrice(); // Recalculate total after updating
@@ -53,17 +59,17 @@ const CartProvider = ({ children }) => {
   };
 
   const calculateTotalQuantityAndPrice = () => {
-    let totalQuantity = 0;
-    let totalPrice = 0;
-
-    items.forEach((item) => {
-      totalQuantity += item.quantity;
-      totalPrice += item.quantity * item.price;
-    });
+    const totalQuantity = items.reduce((acc, item) => acc + item.quantity, 0);
+    const totalPrice = items.reduce((acc, item) => acc + (item.quantity * item.price), 0);
 
     setTotalQuantity(totalQuantity);
     setTotalPrice(totalPrice);
   };
+
+
+  useEffect(() => {
+    calculateTotalQuantityAndPrice();
+  }, [items]);
 
   const value = {
     items,
