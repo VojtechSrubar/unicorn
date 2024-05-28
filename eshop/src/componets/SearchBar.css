@@ -1,3 +1,7 @@
+:root {
+  --logo-color: #002883;
+}
+
 .search-bar {
   display: flex;
   align-items: center;
