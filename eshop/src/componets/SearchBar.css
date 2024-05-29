@@ -21,6 +21,8 @@
 }
 
 .search-bar button {
+  margin-top: auto;
+  margin-bottom: auto;
   background: none;
   border: none;
   cursor: pointer;
