@@ -4,6 +4,7 @@ const CartContext = createContext({
   items: [], // Pole pro uložení položek v košíku
   totalQuantity: 0, // Celkový počet položek v košíku
   totalPrice: 0, // Celková cena položek v košíku
+  product_id: 0,
   addItem: (item, quantity) => {}, // Funkce pro přidání položky do košíku
   removeItem: (itemId) => {}, // Funkce pro odebrání položky z košíku
   updateItemQuantity: (itemId, newQuantity) => {}, // Updated function signature
@@ -14,6 +15,8 @@ const CartProvider = ({ children }) => {
   const [items, setItems] = useState([]);
   const [totalQuantity, setTotalQuantity] = useState(0);
   const [totalPrice, setTotalPrice] = useState(0);
+  const [product_id, setProduct_id] = useState(0);
+  
 
   const addItem = (newItem, quantity) => {
     console.log("Adding item:", newItem, "quantity:", quantity);
@@ -75,6 +78,8 @@ const CartProvider = ({ children }) => {
     items,
     totalQuantity,
     totalPrice,
+    product_id,
+    setProduct_id,
     addItem,
     removeItem,
     updateItemQuantity,

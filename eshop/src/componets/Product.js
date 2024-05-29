@@ -4,8 +4,15 @@ import "./Product.css";
 import { Link } from "react-router-dom";
 import { useContext } from "react";
 import { CartContext } from "../context/CartContext";
+import ProductPage from "../pages/ProductPage";
+import { useState } from "react";
 
 const Product = ({ id, image, title, description, price, onAddToCart }) => {
+
+  
+  const { product_id} = useContext(CartContext);
+  const { setProduct_id } = useContext(CartContext);
+
   const truncatedDescription = description && description.length > 100
     ? `${description.substring(0, 100)}...`
     : description;
@@ -17,9 +24,19 @@ const Product = ({ id, image, title, description, price, onAddToCart }) => {
       addItem({ id, image, title, price }, 1); // Call addItem directly
     };
 
+
+    console.log({ id, image, title, description, price });
+
   return (
+    <>
     <div className="product-card">
-    <Link key={id} to={`/`}>
+    <Link key={id} to={`/products/${id}`} onClick={
+      () => {
+        setProduct_id(id);
+        console.log(product_id);
+      }
+      
+      }>
       <img src={image} className="product-image" alt={title} />
       <div className="product-info">
         <h5 className="product-title">{title}</h5>
@@ -40,6 +57,8 @@ const Product = ({ id, image, title, description, price, onAddToCart }) => {
       <Button />
     </div>
   </div>
+    </>
+    
   );
 };
 
