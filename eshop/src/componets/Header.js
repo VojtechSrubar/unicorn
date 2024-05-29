@@ -7,6 +7,14 @@ import SearchBar from "./SearchBar";
 export default function Header() {
   return (
     <div className="header">
+      {/* <div className="logo">
+        <Link to="/">
+          <img
+            src="../assets/img/logo.jpg"
+            alt="logo"
+          />
+        </Link>
+      </div> */}
       <div className="brand-name">
         <Link to="/">
           <h1>UNICORN</h1>
