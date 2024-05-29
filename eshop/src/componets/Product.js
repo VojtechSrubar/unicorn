@@ -5,7 +5,7 @@ import "./Product.css";
 
 const Product = ({ id, image, title, description, price }) => {
   const truncatedDescription = description && description.length > 100
-    ? `${description.substring(0, 100)}...`
+    ? `${description.substring(0, 150)}...`
     : description;
 
   return (
@@ -16,9 +16,11 @@ const Product = ({ id, image, title, description, price }) => {
           <h5 className="product-title">{title}</h5>
           <p className="product-description">{truncatedDescription || 'No description available'}</p>
           <p className="product-price">${price}</p>
-          <Button />
+          
         </div>
+        <Button />
       </div>
+      
     </div>
   );
 };
