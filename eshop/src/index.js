@@ -9,7 +9,7 @@ import ContactPage from "./pages/ContactPage";
 import ProductsPage from "./pages/ProductsPage";
 import ProductPage from "./pages/ProductPage";
 import NotFoundPage from "./pages/NotFoundPage";
-import "./index.css";
+import "./assets/style.css";
 
 const router = createBrowserRouter([
   {
