@@ -1,5 +1,5 @@
 :root {
-  --logo-color: #002883;
+  --logo-color: #0159B6;
 }
 
 * {
@@ -75,6 +75,10 @@
   
   h5 {
     font-size: 15px;
+  }
+  
+  .add span {
+    display: block;
   }
   
   label,

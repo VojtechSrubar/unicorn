@@ -17,7 +17,7 @@ export default function Header() {
       </div> */}
       <div className="brand-name">
         <Link to="/">
-          <h1>UNICORN</h1>
+          <h1>BICORN</h1>
         </Link>
       </div>
       <div className="navbar">
