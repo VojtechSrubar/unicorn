@@ -74,3 +74,12 @@ h1 {
   margin-left: 20px;
   color: white;
 }
+
+.shopping-cart h5 {
+  margin: 0;
+  color: white;
+}
+
+.shopping-cart h5:hover {
+  color: var(--hover-color);
+}

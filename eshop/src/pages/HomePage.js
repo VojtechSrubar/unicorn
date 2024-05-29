@@ -34,9 +34,6 @@ const HomePage = () => {
           <img src={arrow} alt="arrow" />
         </Link>
       </div>
-      {/* <div className="hero-right">
-        <img src="https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg" />
-      </div> */}
       <Link>
         <Product {...product} />
       </Link>
