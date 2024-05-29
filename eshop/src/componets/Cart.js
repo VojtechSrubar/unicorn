@@ -14,7 +14,7 @@ const CartPage = () => {
     <div>
       {items.length > 0 ? (
         <div>
-          <h2>Your Cart Items</h2>
+          <h1>Your Cart Items</h1>
           <ul className="cart-items-list">
             {items.map((item) => (
               <li key={item.id} className="cart-item">
@@ -26,7 +26,7 @@ const CartPage = () => {
                   {(item.price * item.quantity).toFixed(2)}
                 </div>
                 <div className="item-actions">
-                  <img src={item.image} alt={item.title} style={{ width: '50px', height: '50px' }} />
+                  <img src={item.image} alt={item.title} style={{ width: '60px', height: '60px' }} />
                   <button
                     type="button"
                     className="btn btn-primary"
@@ -52,7 +52,7 @@ const CartPage = () => {
               </li>
             ))}
           </ul>
-          <div className="cart-totals">
+          <div className="cart-totals" style={{ fontSize: '22px', fontWeight: 'bold' }}>
             <span>Total value:</span> ${totalPrice.toFixed(2)}
           </div>
           <button type="button" className="btn btn-danger" onClick={clearCart}>
