@@ -4,9 +4,7 @@ import Cart from '../componets/Cart';
 
 const CartPage = () => {
   return (
-    <CartProvider>
       <Cart />
-    </CartProvider>
   )
 }
 
