@@ -7,7 +7,7 @@ import { CartContext } from "../context/CartContext";
 
 const Product = ({ id, image, title, description, price, onAddToCart }) => {
   const truncatedDescription = description && description.length > 100
-    ? `${description.substring(0, 300)}...`
+    ? `${description.substring(0, 100)}...`
     : description;
 
 
@@ -18,29 +18,28 @@ const Product = ({ id, image, title, description, price, onAddToCart }) => {
     };
 
   return (
-      <div className="product-card">
-        <img src={image} className="product-image" alt={title} />
-        <div className="product-info">
-          <h5 className="product-title">{title}</h5>
-          <p className="product-description">
-<<<<<<< HEAD
-            {truncatedDescription ? (
-              truncatedDescription
-                .replace(/\//g, " / ") // Replace forward slashes with space-slash
-                .replace(/,/g, ", ") // Replace commas with space-comma
-            ) : (
-              'No description available'
-            )}
-=======
-            {truncatedDescription || "No description available"}
->>>>>>> kosik
-          </p>
-          <p className="product-price">${price}</p>
-          <div onClick={handleProductClick}>
-            <Button />
-          </div>
-        </div>
+    <div className="product-card">
+    <Link key={id} to={`/`}>
+      <img src={image} className="product-image" alt={title} />
+      <div className="product-info">
+        <h5 className="product-title">{title}</h5>
+        <p className="product-description">
+          {truncatedDescription ? (
+            truncatedDescription
+              .replace(/\//g, " / ") // Replace forward slashes with space-slash
+              .replace(/,/g, ", ") // Replace commas with space-comma
+          ) : (
+            'No description available'
+          )}
+          {truncatedDescription || "No description available"}
+        </p>
+        <p className="product-price">${price}</p>
       </div>
+    </Link>
+    <div onClick={handleProductClick}>
+      <Button />
+    </div>
+  </div>
   );
 };
 

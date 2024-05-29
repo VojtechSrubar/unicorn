@@ -8,7 +8,6 @@ import Cart from "../componets/Cart";
 function ProductsPage() {
   return (
     <>
-        <Header />
         <ProductList />
     </>
   );

@@ -46,13 +46,9 @@ export default function Header() {
         </div>
         <div className="shopping-cart">
           <Link to="/cart">
-<<<<<<< HEAD
-            <ShoppingCartIcon />
-=======
             <h5>
               <ShoppingCartIcon />({totalQuantity})
             </h5>
->>>>>>> kosik
           </Link>
         </div>
       </div>
