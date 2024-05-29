@@ -28,9 +28,11 @@ export default function Header() {
             <h5>Contact</h5>
           </Link>
         </div>
+        <div>
         <h5>
           <SearchBar />
         </h5>
+        </div>
         <div className="shopping-cart">
           <Link to="/cart">
             <h5>
