@@ -1,5 +1,5 @@
 import React from "react";
-import "../componets/ContactPage.css";
+import "./ContactPage.css";
 import FormInput from "../componets/FormInput";
 
 function ContactPage() {
@@ -36,11 +36,11 @@ function ContactPage() {
     {
       id: 3,
       name: "message",
-      type: "text",
+      type: "textarea",
       placeholder: "Message",
-      errorMessage: "Should not be longer than 255 characters!",
+      errorMessage: "Should not be longer than 500 characters!",
       label: "Message",
-      maxLength: 255,
+      maxLength: 500,
       required: true,
     },
   ];
@@ -48,7 +48,7 @@ function ContactPage() {
   const handleSubmit = (e) => {
     e.preventDefault();
     const data = new FormData(e.target);
-    console.log(Object.fromEntries(data.entries())); // To log the submitted data
+    console.log(Object.fromEntries(data.entries()));
   };
 
   const onChange = (e) => {
@@ -92,7 +92,8 @@ function ContactPage() {
             <strong>Phone:</strong> +420 123 456 789
           </p>
           <p>
-            <strong>Address:</strong> Prokešovo náměstí, Ostrava, Czech republic
+            <strong>Address:</strong> Prokešovo náměstí 2020/6, Ostrava, Czech
+            republic
           </p>
         </div>
       </div>
