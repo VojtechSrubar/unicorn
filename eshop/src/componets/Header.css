@@ -1,9 +1,23 @@
 :root {
   --logo-color: #0159B6;
+  --hover-color: #d0d0d0;
+}
+
+h1 {
+  padding-top: .5rem;
+  padding-bottom: .5rem;
+  margin: 0;
 }
 
 .nav-item a h5 {
   color: white;
+  padding-top: .5rem;
+  padding-bottom: .5rem;
+  margin: 0;
+}
+
+.nav-item a h5:hover {
+  color: var(--hover-color);
 }
 
 .header {
@@ -53,7 +67,7 @@
 }
 
 .navbar a:hover {
-  color: #ababab;
+  color: var(--hover-color);
 }
 
 .shopping-cart {

@@ -31,6 +31,6 @@
 }
 
 .search-bar button:hover {
-  color: #ababab;
+  color: var(--hover-color);
   transition: color ease 0.2s;
 }
