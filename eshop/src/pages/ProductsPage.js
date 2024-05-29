@@ -13,7 +13,6 @@ function ProductsPage() {
         <ProductList />
         <Cart />
       </CartProvider>
-  
     </>
   );
 }
