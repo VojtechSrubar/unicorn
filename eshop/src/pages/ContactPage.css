@@ -10,6 +10,7 @@
   padding: 20px;
   background-color: #f0f0f0;
   height: 100vh;
+  padding-top: 0;
 }
 
 .header-section {
@@ -57,15 +58,16 @@
 }
 
 button {
-  width: 100%;
-  padding: 15px;
+  height: 45px;
+  width: 90%;
+  padding: 10px;
   border: none;
-  background-color: var(--logo-color);
+  outline: none;
+  background: var(--logo-color);
   color: white;
-  border-radius: 5px;
-  margin-top: 15px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+  margin-top: 20px;
+  border-radius: 30px;
+  justify-content: end;
 }
 
 .info-section p {
@@ -77,8 +79,31 @@ button {
   margin-bottom: 5px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1000px) {
   .header-section {
     width: 100%;
+  }
+}
+
+@media (max-width: 800px) {
+  .contact-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .form-section {
+    border-right: none;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .formInput {
+    width: 60vw;
+  }
+
+  .header-section {
+    margin-top: 220px;  
   }
 }

@@ -75,6 +75,7 @@ function ContactPage() {
                 {...input}
                 value={values[input.name]}
                 onChange={onChange}
+                className="form-input"
               />
             ))}
             <button type="submit">Submit</button>
