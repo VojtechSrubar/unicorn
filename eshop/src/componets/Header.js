@@ -37,15 +37,11 @@ export default function Header() {
           </Link>
         </div>
         <div>
-        <h5>
           <SearchBar />
-        </h5>
         </div>
         <div className="shopping-cart">
           <Link to="/cart">
-            <h5>
-              <ShoppingCartIcon />
-            </h5>
+            <ShoppingCartIcon />
           </Link>
         </div>
       </div>
