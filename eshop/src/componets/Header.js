@@ -3,8 +3,13 @@ import "./Header.css";
 import { Link } from "react-router-dom";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import SearchBar from "./SearchBar";
+import { CartContext } from "../context/CartContext";
+import { useContext } from "react";
 
 export default function Header() {
+  const { totalQuantity } = useContext(CartContext);
+
+
   return (
     <div className="header">
       {/* <div className="logo">
@@ -41,7 +46,9 @@ export default function Header() {
         </div>
         <div className="shopping-cart">
           <Link to="/cart">
-            <ShoppingCartIcon />
+            <h5>
+              <ShoppingCartIcon />({totalQuantity})
+            </h5>
           </Link>
         </div>
       </div>

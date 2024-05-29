@@ -9,7 +9,7 @@ import ContactPage from "./pages/ContactPage";
 import ProductsPage from "./pages/ProductsPage";
 import ProductPage from "./pages/ProductPage";
 import NotFoundPage from "./pages/NotFoundPage";
-import "./assets/style.css";
+import CartPage from "./pages/CartPage";
 
 const router = createBrowserRouter([
   {
@@ -32,6 +32,10 @@ const router = createBrowserRouter([
       {
         path: "products/:productId",
         element: <ProductPage />,
+      },
+      {
+        path: "cart",
+        element: <CartPage />,
       },
     ],
   },

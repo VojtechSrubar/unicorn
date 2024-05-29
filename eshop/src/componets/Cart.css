@@ -1,3 +1,42 @@
-:root {
-    --logo-color: #0159B6;
+.cart-container {
+    padding: 20px;
   }
+  
+  .cart-items-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .cart-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+    font-size: 15px;
+  }
+  
+  .item-details {
+    flex: 1;
+    /* Option 1: Flexbox */
+    display: flex; /* Added property */
+    align-items: center; /* Added property */
+    /* Option 2: Line-height */
+    /* line-height: 1.5;  /* Increased line-height */
+  }
+  
+  .item-actions {
+    display: flex;
+    align-items: center;
+  }
+  
+  .btn {
+    margin-left: 5px;
+  }
+  
+  .cart-totals {
+    margin-top: 10px;
+    font-weight: bold;
+  }
+  
