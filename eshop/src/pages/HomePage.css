@@ -1,8 +1,14 @@
-*{margin: 0;}
+:root {
+  --logo-color: #0159b6;
+}
+
+* {
+  margin: 0;
+}
 .hero {
   display: flex;
   height: 100vh;
- 
+
   height: 600px;
 }
 
@@ -22,7 +28,7 @@
   font-weight: 600;
 }
 
-.hero-left p{
+.hero-left p {
   color: #171717;
   font-size: 100px;
   font-weight: 700;
@@ -47,7 +53,7 @@
   height: 70px;
   border-radius: 75px;
   margin-top: 30px;
-  background: blue;
+  background: var(--logo-color);
   color: white;
   font-size: 22px;
   font-weight: 500;
@@ -55,15 +61,40 @@
 }
 
 .hero-latest:hover {
-  background: #002883; 
+  background: #002883;
   transition: 0.2;
 }
 
-.hero-right img{
+.hero-right img {
   max-width: 100%;
-  padding-right: 140px;
+  padding-right: 10%;
 }
 
+.hero-right {
+  margin-top: 50px;
+}
 
+.product-card {
+  max-height: 800px;
+  max-width: 450px;
+  margin: 50px 80px 0 0;
+}
 
+@media screen and (max-width: 1455px) {
+  .hero-left {
+    flex-direction: column;
+    padding: 30px;
+  }
 
+  .hand-hand-icon {
+    flex-direction: column;
+    align-items: normal;  
+  }
+}
+
+@media screen and (max-width: 1050px) {
+  .hero {
+    flex-direction: column;
+    align-items: center;
+  }
+}
