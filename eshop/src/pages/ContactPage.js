@@ -1,9 +1,9 @@
-import { useState } from "react";
+import React from "react";
 import "../componets/ContactPage.css";
 import FormInput from "../componets/FormInput";
 
 function ContactPage() {
-  const [values, setValues] = useState({
+  const [values, setValues] = React.useState({
     username: "",
     email: "",
     fullname: "",
@@ -17,7 +17,7 @@ function ContactPage() {
       type: "text",
       placeholder: "Full name",
       errorMessage:
-        "Name should be 5-50 characters and shouldn't include any special character!",
+        "Name should be 5-50 characters and shouldnt include any special character!",
       label: "Full name",
       pattern: "^[A-Za-zÁČĎÉĚÍŇÓŘŠŤÚŮÝŽáčďéěíňóřšťúůýž ]{5,50}$",
       required: true,
@@ -57,18 +57,45 @@ function ContactPage() {
 
   return (
     <div className="app">
-      <form onSubmit={handleSubmit}>
-        <h1 className="contactus">Contact Us</h1>
-        {inputs.map((input) => (
-          <FormInput
-            key={input.id}
-            {...input}
-            value={values[input.name]}
-            onChange={onChange}
-          />
-        ))}
-        <button type="submit">Submit</button>
-      </form>
+      <div className="header-section">
+        <h1 className="connectus-header">Connect with us</h1>
+        <p className="intro-text">
+          We would love to respond to your queries. Please fill out the form on
+          the left to get in touch with us.
+        </p>
+      </div>
+      <div className="contact-container">
+        <div className="form-section">
+          <h1 className="contactus">Send your request</h1>
+          <form onSubmit={handleSubmit}>
+            {inputs.map((input) => (
+              <FormInput
+                key={input.id}
+                {...input}
+                value={values[input.name]}
+                onChange={onChange}
+              />
+            ))}
+            <button type="submit">Submit</button>
+          </form>
+        </div>
+        <div className="info-section">
+          <h1 className="reachus">Reach us</h1>
+          <p>
+            Feel free to reach out to us via phone or visit our office at the
+            address below:
+          </p>
+          <p>
+            <strong>Email:</strong> unicorn@unicorn.cz
+          </p>
+          <p>
+            <strong>Phone:</strong> +420 123 456 789
+          </p>
+          <p>
+            <strong>Address:</strong> Prokešovo náměstí, Ostrava, Czech republic
+          </p>
+        </div>
+      </div>
     </div>
   );
 }
