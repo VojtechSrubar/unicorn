@@ -40,6 +40,7 @@ function ContactPage() {
       placeholder: "Message",
       errorMessage: "Should not be longer than 500 characters!",
       label: "Message",
+      minLength: 0,
       maxLength: 500,
       required: true,
     },
