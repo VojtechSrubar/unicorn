@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import SearchBar from "./SearchBar";
 
-export default function Header() {
+export default function Header({ searchTerm }) {
   return (
     <div className="header">
       {/* <div className="logo">
