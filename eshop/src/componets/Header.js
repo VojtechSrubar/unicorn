@@ -5,25 +5,26 @@ import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import SearchBar from "./SearchBar";
 import { CartContext } from "../context/CartContext";
 import { useContext } from "react";
+import logo from "../assets/logo.png";
 
 export default function Header() {
   const { totalQuantity } = useContext(CartContext);
 
-
   return (
     <div className="header">
-      {/* <div className="logo">
-        <Link to="/">
-          <img
-            src="../assets/img/logo.jpg"
-            alt="logo"
-          />
-        </Link>
-      </div> */}
-      <div className="brand-name">
-        <Link to="/">
-          <h1>BICORN</h1>
-        </Link>
+      <div className="header-left">
+        <div className="logo">
+          <Link to="/">
+            <img className="logo-img" src={logo} alt="logo" />
+          </Link>
+        </div>
+        <div className="brand-name">
+          <Link to="/">
+            <h1>
+              BICORN
+            </h1>
+          </Link>
+        </div>
       </div>
       <div className="navbar">
         <div className="nav-item">
