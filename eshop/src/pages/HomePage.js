@@ -31,7 +31,7 @@ const HomePage = () => {
         </div>
         <Link to="/products" className="hero-latest">
           Latest Arrivals
-          <img src={arrow} alt="arrow" />
+          <img className="arrow" src={arrow} alt="arrow" />
         </Link>
       </div>
       <Link>
