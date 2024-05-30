@@ -77,7 +77,9 @@ function ContactPage() {
                 className="form-input"
               />
             ))}
-            <button type="submit">Submit</button>
+            <button className="submit-btn" type="submit">
+              Submit
+            </button>
           </form>
         </div>
         <div className="info-section">

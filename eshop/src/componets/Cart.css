@@ -1,42 +1,121 @@
-.cart-container {
-    padding: 20px;
-  }
-  
-  .cart-items-list {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
-  
-  .cart-item {
+:root {
+    --logo-color: #002883;
+}
+
+.cart-page {
+    margin: 80px;
+    background: white;
+    box-shadow: 5px 5px 10px 3px rgba(0, 0, 0, 0.3);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.cart-info {
     display: flex;
-    justify-content: space-between;
-    margin-bottom: 10px;
-    border-bottom: 1px solid #ddd;
-    padding-bottom: 10px;
-    font-size: 15px;
-  }
-  
-  .item-details {
-    flex: 1;
-    /* Option 1: Flexbox */
-    display: flex; /* Added property */
-    align-items: center; /* Added property */
-    /* Option 2: Line-height */
-    /* line-height: 1.5;  /* Increased line-height */
-  }
-  
-  .item-actions {
-    display: flex;
+    flex-wrap: wrap;
     align-items: center;
-  }
-  
-  .btn {
-    margin-left: 5px;
-  }
-  
-  .cart-totals {
-    margin-top: 10px;
+}
+
+.cart-info p {
+    margin: 20px 0;
+}
+
+th {
+    text-align: left;
+    padding: 5px;
+    color: #fff;
+    font-weight: normal;
+}
+
+.cart-header {
+  background: linear-gradient(
+    90deg,
+    rgba(0, 31, 111, 1) 0%,
+    rgba(1, 62, 149, 1) 50%,
+    rgba(1, 91, 184, 1) 100%
+  );
+}
+
+td {
+    padding: 10px 5px;
+}
+
+td input {
+    width: 40px;
+    height: 30px;
+    padding: 5px;
+}
+
+td img {
+    height: 80px;
+    margin-right: 10px;
+}
+
+.total-price {
+    display: flex;
+    justify-content: flex-end;
     font-weight: bold;
+}
+
+.remove-btn {
+    margin: 0;
+    width: 250px;
+    height: 30px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    background-color: var(--logo-color);
+    transition: background-color 0.3s ease
+}
+
+.remove-btn:hover{
+    background: #002883;
+    transition: 0.2;
+  }
+
+.total-price table {
+    border-top: 3px solid var(--logo-color);
+    width: 100%;
+    max-width: 400px;
+}
+
+td:last-child, th:last-child {
+    text-align: right;
+}
+
+.text-empty-cart {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; 
   }
   
+  .tlacitko-empty-cart {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    width: 310px;
+    height: 70px;
+    border-radius: 75px;
+    margin-top: 30px;
+    background: var(--logo-color);
+    color: white;
+    font-size: 22px;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+  }
+  .tlacitko-empty-cart:hover{
+    background: #002883;
+    transition: 0.2;
+  }
+
+@media only screen and (max-width: 600px) {
+    .cart-info p {
+        display: none;
+    }
+}

@@ -1,81 +1,79 @@
 import React, { useContext } from "react";
-import { CartContext } from "../context/CartContext"; // Assuming CartContext is in a sibling folder
+import { Link } from "react-router-dom";
+import { CartContext } from "../context/CartContext";
 import "./Cart.css";
+import arrow from "../assets/arrow.png";
 
-const CartPage = () => {
-  const { items } = useContext(CartContext);
-  const { removeItem } = useContext(CartContext);
-  const { totalPrice } = useContext(CartContext);
-  const { clearCart } = useContext(CartContext);
-  const { updateItemQuantity } = useContext(CartContext);
+const Cart = () => {
+  const { items, removeItem, totalPrice, clearCart, updateItemQuantity } =
+    useContext(CartContext);
 
-  console.log(items);
+  const handleQuantityChange = (itemId, newQuantity) => {
+    updateItemQuantity(itemId, newQuantity);
+  };
+
   return (
-    <div>
+    <>
       {items.length > 0 ? (
-        <div>
-          <h1>Your Cart Items</h1>
-          <ul className="cart-items-list">
+        <div className="small-container cart-page">
+          <table>
+            <tr className="cart-header">
+              <th>Product</th>
+              <th>Quantity</th>
+              <th>Subtotal</th>
+            </tr>
+
             {items.map((item) => (
-              <li key={item.id} className="cart-item">
-                <div className="item-details">
-                  <span style={{ fontSize: "18px", fontWeight: "bold" }}>
-                    {item.title}
-                  </span>
-                  - Quantity: {item.quantity} - Price: $
-                  {(item.price * item.quantity).toFixed(2)}
-                </div>
-                <div className="item-actions">
-                  <img
-                    src={item.image}
-                    alt={item.title}
-                    style={{ width: "60px", height: "60px" }}
+              <tr key={item.id}>
+                <td>
+                  <div className="cart-info">
+                    <img src={item.image} alt={item.title} />
+                    <div>
+                      <p>{item.title}</p>
+                      <small>$ {item.price}</small>
+                      <br />
+                      <button
+                        className="remove-btn"
+                        onClick={() => removeItem(item.id)}
+                      >
+                        Remove
+                      </button>
+                    </div>
+                  </div>
+                </td>
+                <td>
+                  <input
+                    type="number"
+                    value={item.quantity}
+                    onChange={(e) =>
+                      handleQuantityChange(item.id, parseInt(e.target.value))
+                    }
                   />
-                  <button
-                    type="button"
-                    className="btn btn-primary"
-                    onClick={() =>
-                      updateItemQuantity(item.id, item.quantity - 1)
-                    }
-                  >
-                    -
-                  </button>
-                  <button
-                    type="button"
-                    className="btn btn-primary"
-                    onClick={() =>
-                      updateItemQuantity(item.id, item.quantity + 1)
-                    }
-                  >
-                    +
-                  </button>
-                  <button
-                    type="button"
-                    className="btn btn-danger"
-                    onClick={() => removeItem(item.id)}
-                  >
-                    Delete
-                  </button>
-                </div>
-              </li>
+                </td>
+                <td>$ {(item.price * item.quantity).toFixed(2)}</td>
+              </tr>
             ))}
-          </ul>
-          <div
-            className="cart-totals"
-            style={{ fontSize: "22px", fontWeight: "bold" }}
-          >
-            <span>Total value:</span> ${totalPrice.toFixed(2)}
+          </table>
+          <div className="total-price">
+            <table>
+              <tr>
+                <td>Total</td>
+                <td>$ {totalPrice.toFixed(2)}</td>
+              </tr>
+            </table>
           </div>
-          <button type="button" className="btn btn-danger" onClick={clearCart}>
-            Clear Cart
-          </button>
-          {/* Add buttons or options for checkout etc. */}
         </div>
       ) : (
-        <div>Your cart is empty.</div>
+        <div className="text-empty-cart">
+          <h1>Your cart is empty</h1>
+          <Link className="btn btn-primary tlacitko-empty-cart" to="/products">
+            To products
+            <img src={arrow} alt="arrow" className="arrow-icon" />
+          </Link>
+        </div>
       )}
-    </div>
+    </>
   );
 };
 
-export default CartPage;
+export default Cart;
