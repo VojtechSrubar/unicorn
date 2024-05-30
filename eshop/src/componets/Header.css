@@ -9,6 +9,10 @@ h1 {
   margin: 0;
 }
 
+h1, h5 {
+  font-weight: bold;
+}
+
 .nav-item a h5 {
   color: white;
   padding-top: .5rem;
