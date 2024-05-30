@@ -43,7 +43,9 @@ export default function Header() {
           </Link>
         </div>
         <div>
-          <SearchBar />
+          <Link to="/products">
+            <SearchBar />
+          </Link>
         </div>
         <div className="shopping-cart">
           <Link to="/cart">
