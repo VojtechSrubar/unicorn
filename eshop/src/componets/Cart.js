@@ -27,7 +27,9 @@ const Cart = () => {
               <tr key={item.id}>
                 <td>
                   <div className="cart-info">
-                    <img src={item.image} alt={item.title} />
+                    <div className="image">
+                      <img src={item.image} alt={item.title} />
+                    </div>
                     <div>
                       <p>{item.title}</p>
                       <small>$ {item.price}</small>

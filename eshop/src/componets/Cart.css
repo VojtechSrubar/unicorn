@@ -19,6 +19,14 @@ table {
     align-items: center;
 }
 
+.image {
+    width: 200px;
+}
+
+.image img {
+    max-width: 100%;
+}
+
 .cart-info p {
     margin: 20px 0;
 }
