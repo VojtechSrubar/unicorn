@@ -12,18 +12,15 @@ function ProductPage() {
   const { setProduct_id } = useContext(CartContext);
   const { addItem } = useContext(CartContext);
 
-
-
-  const [pocet,setPocet] = useState(1);
-
-
+  const [pocet, setPocet] = useState(1);
 
   const pridat = () => {
     setPocet(p => p + 1);
   };
 
   const odecit = () => {
-    setPocet(p => p - 1);
+    // Ensure pocet doesn't go below 1
+    setPocet(p => Math.max(p - 1, 1));
   };
 
   console.log(product_id);
@@ -41,8 +38,8 @@ function ProductPage() {
   }, [product_id]);
 
   console.log(product);
-
   console.log(product);
+
   return (
     <section>
       <div className="container flex">
@@ -53,8 +50,8 @@ function ProductPage() {
         </div>
         <div className="right">
           <h3>{product.title}</h3>
-          <h4> ${product.price} </h4>
-          <p>{product.description} </p>
+          <h4>${product.price * pocet}</h4>
+          <p>{product.description}</p>
           <h5>Number</h5>
           <div className="add flex1">
             <button onClick={odecit}>-</button>
@@ -62,7 +59,9 @@ function ProductPage() {
             <button onClick={pridat}>+</button>
           </div>
 
-          <button className="add-to-cart">Add to Cart</button>
+          <button className="add-to-cart" onClick={() => addItem(product, pocet)}>
+            Add to Cart
+          </button>
         </div>
       </div>
     </section>
