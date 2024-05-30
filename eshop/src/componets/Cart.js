@@ -1,6 +1,8 @@
 import React, { useContext } from "react";
 import { CartContext } from "../context/CartContext";
+import { Link } from "react-router-dom";
 import "./Cart.css";
+import arrow from "../assets/arrow.png";
 
 const Cart = () => {
   const { items, removeItem, totalPrice, clearCart, updateItemQuantity } =
@@ -62,7 +64,13 @@ const Cart = () => {
           </div>
         </div>
       ) : (
-        <h2>Cart is empty</h2>
+        <div className="text-empty-cart">
+          <h1>Your cart is empty</h1>
+          <Link className="btn btn-primary tlacitko-empty-cart" to="/">
+            Continue Shopping
+            <img src={arrow} alt="arrow" className="arrow-icon" />
+          </Link>
+        </div>
       )}
     </>
   );
