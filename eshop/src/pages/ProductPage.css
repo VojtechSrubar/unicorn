@@ -77,12 +77,12 @@
     font-size: 15px;
   }
   
-  .add span {
+  .add button {
     display: block;
   }
   
   label,
-  .add span {
+  .add button {
     width: 25px;
     height: 25px;
     background: #000;
@@ -91,7 +91,7 @@
   }
   
   .add label,
-  .add span {
+  .add button {
     background: none;
     border: 1px solid #444;
     color: #444;
