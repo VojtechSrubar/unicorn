@@ -60,7 +60,6 @@
 button {
   height: 45px;
   width: 90%;
-  padding: 10px;
   border: none;
   outline: none;
   background: var(--logo-color);

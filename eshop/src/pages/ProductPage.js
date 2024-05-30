@@ -10,6 +10,21 @@ import "./ProductPage.css";
 function ProductPage() {
   const { product_id } = useContext(CartContext);
   const { setProduct_id } = useContext(CartContext);
+  const { addItem } = useContext(CartContext);
+
+
+
+  const [pocet,setPocet] = useState(1);
+
+
+
+  const pridat = () => {
+    setPocet(p => p + 1);
+  };
+
+  const odecit = () => {
+    setPocet(p => p - 1);
+  };
 
   console.log(product_id);
 
@@ -42,9 +57,9 @@ function ProductPage() {
           <p>{product.description} </p>
           <h5>Number</h5>
           <div className="add flex1">
-            <span>-</span>
-            <label>1</label>
-            <span>+</span>
+            <button onClick={odecit}>-</button>
+            <label>{pocet}</label>
+            <button onClick={pridat}>+</button>
           </div>
 
           <button className="add-to-cart">Add to Cart</button>
