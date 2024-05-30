@@ -68,7 +68,13 @@ td img {
     justify-content: center;
     display: flex;
     background-color: var(--logo-color);
+    transition: background-color 0.3s ease
 }
+
+.remove-btn:hover{
+    background: #002883;
+    transition: 0.2;
+  }
 
 .total-price table {
     border-top: 3px solid var(--logo-color);
@@ -102,6 +108,10 @@ td:last-child, th:last-child {
     font-size: 22px;
     font-weight: 500;
     transition: background-color 0.3s ease;
+  }
+  .tlacitko-empty-cart:hover{
+    background: #002883;
+    transition: 0.2;
   }
 
 @media only screen and (max-width: 600px) {

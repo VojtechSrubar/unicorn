@@ -13,5 +13,10 @@
     margin-top: 20%;
     border-radius: 30px;
     justify-content: end;
+    transition: background-color 0.3s ease
   }
 
+  .add-to-cart:hover{
+    background: #002883;
+    transition: 0.2;
+  }

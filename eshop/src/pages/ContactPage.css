@@ -69,6 +69,16 @@ button {
   justify-content: end;
 }
 
+.submit-btn{
+  transition: background-color 0.3s ease
+}
+
+.submit-btn:hover{
+    background: #002883;
+    transition: 0.2;
+  }
+
+
 .info-section p {
   margin: 10px 0;
 }
