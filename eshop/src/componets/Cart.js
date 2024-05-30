@@ -66,7 +66,7 @@ const Cart = () => {
       ) : (
         <div className="text-empty-cart">
           <h1>Your cart is empty</h1>
-          <Link className="btn btn-primary tlacitko-empty-cart" to="/">
+          <Link className="btn btn-primary tlacitko-empty-cart" to="/products">
             Continue Shopping
             <img src={arrow} alt="arrow" className="arrow-icon" />
           </Link>
